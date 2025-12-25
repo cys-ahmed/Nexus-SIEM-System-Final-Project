@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "start": "cd Nexus-SIEM-System && npm run dev",
+    "start-backend": "cd Backend-Server && npm start",
+    "clear-logs": "cd Backend-Server && npm run clear-logs",
+    "clear-incidents": "cd Backend-Server && npm run clear-incidents",
+    "clear-devices": "cd Backend-Server && npm run clear-devices",
+    "clear-notifications": "cd Backend-Server && npm run clear-notifications"
+  },
+  "devDependencies": {
+    "vite": "^7.2.7"
+  }
+}

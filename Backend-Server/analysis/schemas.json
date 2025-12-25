@@ -1,0 +1,17 @@
+{
+    "Event_Id": "",
+    "Timestamp": "",
+    "Severity": "",
+    "Description ": "",
+    "Event_type": "",
+    "Src_ip": "",
+    "Dest_ip": "",
+    "Dev_id": "",
+    "log_id": "",
+    "ingestion_timestamp": "",
+    "source_service": "",
+    "source_process": "",
+    "source_process_id": "",
+    "source_module": "",
+    "Hostname": ""
+}
