@@ -85,23 +85,22 @@ Frontend (.env)
 VITE_API_BASE=http://localhost:3000
 ```
 
-📦 Features
+## 📦 Features
 | Feature       | Status | Notes |
-|:--------------|:------:|--------:|
-| ✅ Log Ingestion (Syslog, File, API) | ✅ Done |       Supports JSON & plain-text formats |
-| ✅ Rule Engine (YAML-based)      | ✅ Done |       Easily extend with new detection rules |
-| ✅ Real-time Alerts     | ✅ Done  |       Via WebSocket + Email |
-| ✅ Incident Workflow     | ✅ Done |       "Assign, comment, resolve" |
-| ✅ Dashboard (Charts, Tables)     | ✅ Done |       Powered by Chart.js |
-| 🟨 Threat Intelligence Feeds     | ⏳ Coming Soon |       Planned for v1.1 |
-| 🟨 REST API Documentation     | ⏳ Coming Soon |       (OpenAPI/Swagger coming soon) |
+|:--------------|:------:|:--------|
+| ✅ Log Ingestion (Syslog, File, API) | ✅ Done |Supports JSON & plain-text formats |
+| ✅ Rule Engine (YAML-based)      | ✅ Done |Easily extend with new detection rules |
+| ✅ Real-time Alerts     | ✅ Done  |Via WebSocket + Email |
+| ✅ Incident Workflow     | ✅ Done |Assign, comment, resolve|
+| ✅ Dashboard (Charts, Tables)     | ✅ Done |Powered by Chart.js |
+| 🟨 Threat Intelligence Feeds     | ⏳ Coming Soon |Planned for v1.1 |
+| 🟨 REST API Documentation     | ⏳ Coming Soon |(OpenAPI/Swagger coming soon) |
 
-🧪 Testing & Development
+## 🧪 Testing & Development
+- Backend tests: npm test (Jest)
+- Frontend linting: npm run lint
+- DB migrations: Managed via prisma migrate dev or custom scripts
 
-Backend tests: npm test (Jest)
-Frontend linting: npm run lint
-DB migrations: Managed via prisma migrate dev or custom scripts
-
-📜 License
+## 📜 License
 Distributed under the MIT License.
 See LICENSE for details.
