@@ -86,17 +86,18 @@ VITE_API_BASE=http://localhost:3000
 ```
 
 📦 Features
-[table-a3a3fa8a-4337-40b2-95bb-c009d112b2da.csv](https://github.com/user-attachments/files/24412128/table-a3a3fa8a-4337-40b2-95bb-c009d112b2da.csv)
-Feature,Status,Notes
-"✅ Log Ingestion (Syslog, File, API)",✔️,Supports JSON & plain-text formats
-✅ Rule Engine (YAML-based),✔️,Easily extend with new detection rules
-✅ Real-time Alerts,✔️,Via WebSocket + Email
-✅ Incident Workflow,✔️,"Assign, comment, resolve"
-"✅ Dashboard (Charts, Tables)",✔️,Powered by Chart.js
-🟨 Threat Intelligence Feeds,⏳,Planned for v1.1
-🟨 REST API Documentation,⏳,(OpenAPI/Swagger coming soon)
+| Feature       | Status | Notes |
+|:--------------|:------:|--------:|
+| ✅ Log Ingestion (Syslog, File, API) | ✅ Done |       Supports JSON & plain-text formats |
+| ✅ Rule Engine (YAML-based)      | ✅ Done |       Easily extend with new detection rules |
+| ✅ Real-time Alerts     | ✅ Done  |       Via WebSocket + Email |
+| ✅ Incident Workflow     | ✅ Done |       "Assign, comment, resolve" |
+| ✅ Dashboard (Charts, Tables)     | ✅ Done |       Powered by Chart.js |
+| 🟨 Threat Intelligence Feeds     | ⏳ Coming Soon |       Planned for v1.1 |
+| 🟨 REST API Documentation     | ⏳ Coming Soon |       (OpenAPI/Swagger coming soon) |
 
 🧪 Testing & Development
+
 Backend tests: npm test (Jest)
 Frontend linting: npm run lint
 DB migrations: Managed via prisma migrate dev or custom scripts
