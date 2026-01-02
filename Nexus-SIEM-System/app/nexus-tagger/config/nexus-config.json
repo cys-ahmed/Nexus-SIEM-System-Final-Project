@@ -1,0 +1,69 @@
+{
+    "nexusTagger": {
+        "version": "1.0.0",
+        "description": "SIEM System Component Tagger Configuration",
+        "settings": {
+            "enabled": true,
+            "mode": "development",
+            "logLevel": "info",
+            "autoTag": true,
+            "securityMode": true
+        },
+        "components": {
+            "dashboard": {
+                "tag": "siem-dashboard",
+                "category": "security",
+                "priority": "high",
+                "monitoring": true
+            },
+            "alerts": {
+                "tag": "siem-alerts",
+                "category": "security",
+                "priority": "critical",
+                "monitoring": true
+            },
+            "sidebar": {
+                "tag": "siem-sidebar",
+                "category": "navigation",
+                "priority": "medium",
+                "monitoring": false
+            },
+            "logs": {
+                "tag": "siem-logs",
+                "category": "security",
+                "priority": "high",
+                "monitoring": true
+            },
+            "incidents": {
+                "tag": "siem-incidents",
+                "category": "security",
+                "priority": "critical",
+                "monitoring": true
+            },
+            "threats": {
+                "tag": "siem-threats",
+                "category": "security",
+                "priority": "critical",
+                "monitoring": true
+            },
+            "infrastructure": {
+                "tag": "siem-infrastructure",
+                "category": "system",
+                "priority": "high",
+                "monitoring": true
+            }
+        },
+        "security": {
+            "encryptTags": true,
+            "auditLog": true,
+            "complianceMode": "SOC2",
+            "dataRetention": "90d"
+        },
+        "monitoring": {
+            "performance": true,
+            "errors": true,
+            "userInteractions": true,
+            "securityEvents": true
+        }
+    }
+}

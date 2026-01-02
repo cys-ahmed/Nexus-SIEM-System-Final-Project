@@ -1,0 +1,63 @@
+{
+    "componentTagger": {
+        "version": "1.0.0",
+        "description": "SIEM System Component Tagger Configuration",
+        "settings": {
+            "enabled": true,
+            "mode": "development",
+            "generateTailwindConfig": true,
+            "watchFiles": true,
+            "logLevel": "info"
+        },
+        "tailwind": {
+            "inputFile": "./tailwind.config.ts",
+            "outputFile": "./src/tailwind.config.siem.json",
+            "intermediateFile": "./.siem.tailwind.config.js",
+            "bundle": true,
+            "format": "esm"
+        },
+        "components": {
+            "autoTag": true,
+            "tagPrefix": "siem-",
+            "categories": {
+                "security": {
+                    "color": "#ef4444",
+                    "priority": "high",
+                    "components": [
+                        "Dashboard",
+                        "Alerts",
+                        "Incidents",
+                        "Threats",
+                        "Logs"
+                    ]
+                },
+                "navigation": {
+                    "color": "#3b82f6",
+                    "priority": "medium",
+                    "components": [
+                        "Sidebar",
+                        "Header"
+                    ]
+                },
+                "system": {
+                    "color": "#10b981",
+                    "priority": "medium",
+                    "components": [
+                        "Infrastructure",
+                        "Settings"
+                    ]
+                }
+            }
+        },
+        "security": {
+            "auditLog": true,
+            "encryptConfig": false,
+            "complianceMode": "SOC2"
+        },
+        "monitoring": {
+            "performance": true,
+            "errors": true,
+            "fileChanges": true
+        }
+    }
+}

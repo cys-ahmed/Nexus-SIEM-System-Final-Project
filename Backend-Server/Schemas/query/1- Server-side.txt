@@ -1,0 +1,15 @@
+1-
+INSERT INTO "Devices" ("Device_id","Device_type","Ip_Address")
+VALUES ('550e8400-e29b-41d4-a716-446655440000','localhost','127.0.0.1');
+
+2-
+INSERT INTO "Logs" ("log_id","log_type","logfile","Dev_id")
+VALUES ('1234','test','','550e8400-e29b-41d4-a716-446655440000');
+
+3-
+INSERT INTO "Logs" ("log_id","log_type","logfile","Dev_id")
+values ('2345','auth','','550e8400-e29b-41d4-a716-446655440000')
+
+4-
+INSERT INTO "Logs" ("log_id","log_type","logfile","Dev_id")
+values ('3456','auth','','550e8400-e29b-41d4-a716-446655440000')
