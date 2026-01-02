@@ -28,7 +28,7 @@ The Nexus SIEM System consists of two main components:
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/cys-ahmed/Nexus-SIEM-System-Final-Project.git
    cd Nexus-SIEM-System-main
    ```
 
