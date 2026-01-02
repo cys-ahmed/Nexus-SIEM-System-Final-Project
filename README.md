@@ -42,7 +42,6 @@ The Nexus SIEM System consists of two main components:
 
 - [Backend Documentation](./Backend-Server/README.md)
 - [Frontend Documentation](./Nexus-SIEM-System/README.md)
-- [Screenshots](./Screenshots/README.md)
 
 ## License
 
