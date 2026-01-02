@@ -88,7 +88,7 @@ npm run dev                       # Starts server on http://localhost:3000
 cd ../Nexus-SIEM-System
 cp .env.example .env              # Configure API base URL (e.g., VITE_API_BASE=http://localhost:3000)
 npm install
-npm run dev                       # Starts dashboard on http://localhost:5173
+npm run dev                       # Starts dashboard on http://localhost:8080
 ```
 🛠 Configuration
 Backend (.env)
