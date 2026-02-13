@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "start": "cd frontend && npm run dev",
+    "start-backend": "cd backend && npm start",
+    "clear-logs": "cd backend && npm run clear-logs",
+    "clear-incidents": "cd backend && npm run clear-incidents",
+    "clear-devices": "cd backend && npm run clear-devices",
+    "clear-notifications": "cd backend && npm run clear-notifications"
+  },
+  "devDependencies": {
+    "vite": "^7.2.7"
+  }
+}

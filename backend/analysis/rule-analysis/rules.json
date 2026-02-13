@@ -1,0 +1,224 @@
+{
+    "authentication_attacks": {
+        "brute_force": {
+            "enabled": true,
+            "name": "Brute Force Attack",
+            "description": "Multiple failed login attempts from the same IP address",
+            "severity": "HIGH",
+            "threshold": 5,
+            "timeWindow": 300,
+            "eventTypes": [
+                "authentication"
+            ],
+            "conditions": {
+                "message_patterns": [
+                    "failed",
+                    "invalid",
+                    "incorrect password",
+                    "authentication failure"
+                ]
+            }
+        },
+        "password_spraying": {
+            "enabled": true,
+            "name": "Password Spraying Attack",
+            "description": "Failed login attempts across multiple usernames from the same IP",
+            "severity": "HIGH",
+            "threshold": 3,
+            "timeWindow": 600,
+            "eventTypes": [
+                "authentication"
+            ],
+            "conditions": {
+                "message_patterns": [
+                    "failed",
+                    "invalid"
+                ],
+                "unique_usernames": true
+            }
+        },
+        "successful_after_failed": {
+            "enabled": true,
+            "name": "Successful Login After Failed Attempts",
+            "description": "Successful authentication following multiple failed attempts",
+            "severity": "MEDIUM",
+            "threshold": 3,
+            "timeWindow": 300,
+            "eventTypes": [
+                "authentication"
+            ],
+            "conditions": {
+                "failed_then_success": true
+            }
+        }
+    },
+    "privilege_escalation": {
+        "suspicious_sudo": {
+            "enabled": true,
+            "name": "Suspicious sudo Usage",
+            "description": "Excessive sudo command execution in short time period",
+            "severity": "MEDIUM",
+            "threshold": 3,
+            "timeWindow": 60,
+            "eventTypes": [
+                "system"
+            ],
+            "conditions": {
+                "service_names": [
+                    "sudo"
+                ],
+                "message_patterns": [
+                    "COMMAND"
+                ]
+            }
+        },
+        "failed_privilege_escalation": {
+            "enabled": true,
+            "name": "Failed Privilege Escalation",
+            "description": "Multiple failed sudo or su attempts",
+            "severity": "HIGH",
+            "threshold": 3,
+            "timeWindow": 300,
+            "eventTypes": [
+                "system",
+                "authentication"
+            ],
+            "conditions": {
+                "service_names": [
+                    "sudo",
+                    "su"
+                ],
+                "message_patterns": [
+                    "failed",
+                    "denied",
+                    "not in sudoers",
+                    "incorrect password"
+                ]
+            }
+        },
+        "unusual_root_access": {
+            "enabled": true,
+            "name": "Unusual Root Access",
+            "description": "Root login or su to root from unexpected source",
+            "severity": "HIGH",
+            "threshold": 1,
+            "timeWindow": 60,
+            "eventTypes": [
+                "authentication",
+                "system"
+            ],
+            "conditions": {
+                "message_patterns": [
+                    "root",
+                    "uid=0"
+                ],
+                "service_names": [
+                    "su",
+                    "sudo",
+                    "sshd"
+                ]
+            }
+        }
+    },
+    "session_anomalies": {
+        "concurrent_sessions": {
+            "enabled": true,
+            "name": "Concurrent Sessions Detected",
+            "description": "Same user logged in from multiple IP addresses simultaneously",
+            "severity": "MEDIUM",
+            "threshold": 2,
+            "timeWindow": 300,
+            "eventTypes": [
+                "session",
+                "authentication"
+            ],
+            "conditions": {
+                "message_patterns": [
+                    "session opened",
+                    "accepted"
+                ],
+                "different_ips": true
+            }
+        },
+        "session_hijacking": {
+            "enabled": true,
+            "name": "Possible Session Hijacking",
+            "description": "IP address change detected during active session",
+            "severity": "HIGH",
+            "threshold": 1,
+            "timeWindow": 600,
+            "eventTypes": [
+                "session"
+            ],
+            "conditions": {
+                "ip_change_during_session": true
+            }
+        },
+        "abnormal_session_duration": {
+            "enabled": true,
+            "name": "Abnormal Session Duration",
+            "description": "Session duration outside normal parameters",
+            "severity": "LOW",
+            "threshold": 1,
+            "timeWindow": 0,
+            "eventTypes": [
+                "session"
+            ],
+            "conditions": {
+                "min_duration": 1,
+                "max_duration": 86400
+            }
+        }
+    },
+    "log_severity": {
+        "critical_error_log": {
+            "enabled": true,
+            "name": "Critical Error Log",
+            "description": "Critical system error detected in logs",
+            "severity": "CRITICAL",
+            "threshold": 1,
+            "timeWindow": 60,
+            "eventTypes": [
+                "system",
+                "application",
+                "security"
+            ],
+            "conditions": {
+                "min_severity": 4
+            }
+        },
+        "high_severity_log": {
+            "enabled": true,
+            "name": "High Severity Warning Log",
+            "description": "High severity warning detected in logs",
+            "severity": "HIGH",
+            "threshold": 1,
+            "timeWindow": 60,
+            "eventTypes": [
+                "system",
+                "application",
+                "security"
+            ],
+            "conditions": {
+                "min_severity": 3
+            }
+        },
+        "low_severity_log": {
+            "enabled": true,
+            "name": "Low Severity Info Log",
+            "description": "Low severity informational log detected",
+            "severity": "LOW",
+            "threshold": 1,
+            "timeWindow": 60,
+            "eventTypes": [
+                "system",
+                "application",
+                "security"
+            ],
+            "conditions": {
+                "min_severity": 1,
+                "max_severity": 1
+            }
+        }
+    }
+}
